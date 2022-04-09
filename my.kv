@@ -1,0 +1,91 @@
+#:import Label kivy.uix.label.Label
+
+
+
+
+
+<MenuWindow>:
+    name: "menu"
+
+    FloatLayout:
+    
+        Label:
+            text:"Undercover / Mr.White"
+            font_size: (root.width**2 + root.height**2) / 17**4
+            pos_hint: {"x":0.2, "top":0.95}
+            size_hint: 0.6, 0.1
+
+        Button:
+            pos_hint:{"x":0.05,"y":0.6}
+            size_hint: 0.4, 0.2
+            font_size: (root.width**2 + root.height**2) / 18**4
+            text: "Nouvelle Partie"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.onPushed_NewGame()
+
+        Button:
+            pos_hint:{"x":0.55,"y":0.6}
+            size_hint: 0.4, 0.2
+            font_size: (root.width**2 + root.height**2) / 18**4
+            text: "Mots"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.onPushed_Words()
+                
+        Button:
+            pos_hint:{"x":0.05,"y":0.35}
+            size_hint: 0.4, 0.2
+            font_size: (root.width**2 + root.height**2) / 18**4
+            text: "Historique"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.onPushed_History()
+
+        Button:
+            pos_hint:{"x":0.55,"y":0.35}
+            size_hint: 0.4, 0.2
+            font_size: (root.width**2 + root.height**2) / 18**4
+            text: "Statistiques"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.onPushed_Stats()
+     
+
+<GamePrepaWindow>
+    name : "gamePrepa"
+      
+
+<GameRoundWindow>
+    name : "gameRound"
+      
+
+<WordWindow>
+    name : "word"
+      
+
+<HistoryWindow>
+    name : "history"
+    
+
+<StatsWindow>
+    name : "stats"
+
+    FloatLayout:
+    
+        Label:
+            text:"Mots"
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.2, "top":0.95}
+            size_hint: 0.6, 0.1
+            
+        Button:
+            pos_hint:{"x":0.05,"y":0.85}
+            size_hint: 0.1, 0.1
+            font_size: (root.width**2 + root.height**2) / 16**4
+            text: "Menu"
+            on_release:
+                root.manager.transition.direction = "down"
+                root.onPushed_ReturnMenu()
+
+
